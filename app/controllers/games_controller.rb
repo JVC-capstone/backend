@@ -20,11 +20,11 @@ class GamesController < ApplicationController
 
     def update
       
-      end
+    end
 
-      def destroy
+    def destroy
 
-      end
+    end
 
     private
     def game_params
