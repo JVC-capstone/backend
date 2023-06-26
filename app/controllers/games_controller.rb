@@ -12,18 +12,31 @@ class GamesController < ApplicationController
     def create 
         game = Game.create(game_params)
         if game.valid?
-            render json: game
+            render json: game, status: :created
         else
             render json: game.errors, status: 422
         end
     end
 
     def update
-      
+        game = Game.find(params[:id])
+        game.update(game_params)
+        if game.valid?
+          render json: game
+        else
+          render json: game.errors, status: 422
+        end
+   
     end
 
     def destroy
-
+        game = Game.find(params[:id])
+        games = Game.all
+        if game.destroy
+          render json: games, status: 410
+        else
+          render json: game.errors
+        end
     end
 
     private
@@ -31,3 +44,7 @@ class GamesController < ApplicationController
         params.require(:game).permit(:title, :image, :platform, :genre, :notes, :user_id)
     end
 end
+
+
+
+
