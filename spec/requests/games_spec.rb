@@ -11,11 +11,11 @@ RSpec.describe "Games", type: :request do
   describe "GET /index" do
     it 'gets a list of games' do
       game = user.games.create(
-          title: 'THE LEGEND OF ZELDA: TEARS OF THE KINGDOM',
-          image: 'https://media.rawg.io/media/resize/420/-/screenshots/c0d/c0dafd15ec182acab8f5879665eaa642.jpg',
-          platform: 'Nintendo Switch',
-          genre: 'Adventure',
-          notes: 'Some good action in this game'
+        title: 'THE LEGEND OF ZELDA: TEARS OF THE KINGDOM',
+        image: 'https://media.rawg.io/media/resize/420/-/screenshots/c0d/c0dafd15ec182acab8f5879665eaa642.jpg',
+        platform: 'Nintendo Switch',
+        genre: 'Adventure',
+        notes: 'Some good action in this game'
       )
       get '/games'
       game = Game.first
