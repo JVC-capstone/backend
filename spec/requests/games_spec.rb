@@ -64,12 +64,12 @@ RSpec.describe "Games", type: :request do
   describe "PATCH /update" do
     it "updates a game with valid attributes" do
       game = user.games.create(
-          title: 'Vectorman',
-          image:'https://upload.wikimedia.org/wikipedia/en/4/43/Vectorman_cover.jpg?20080627132115',
-          platform:'Sega Genesis',
-          genre:'Adventure',
-          notes:'Awesome childhood game!',
-          user_id: user.id
+        title: 'Vectorman',
+        image:'https://upload.wikimedia.org/wikipedia/en/4/43/Vectorman_cover.jpg?20080627132115',
+        platform:'Sega Genesis',
+        genre:'Adventure',
+        notes:'Awesome childhood game!',
+        user_id: user.id
       )
       get '/games'
 
@@ -92,12 +92,12 @@ RSpec.describe "Games", type: :request do
 
     it "doesn't update a game without a title" do
       game = user.games.create(
-          title: 'Vector-man',
-          image:'https://upload.wikimedia.org/wikipedia/en/4/43/Vectorman_cover.jpg?20080627132115',
-          platform:'SEGA',
-          genre:'Action',
-          notes:'Awesome childhood game spent many hours on this game!',
-          user_id: user.id
+        title: 'Vector-man',
+        image:'https://upload.wikimedia.org/wikipedia/en/4/43/Vectorman_cover.jpg?20080627132115',
+        platform:'SEGA',
+        genre:'Action',
+        notes:'Awesome childhood game spent many hours on this game!',
+        user_id: user.id
       )
       get '/games'
 
@@ -122,21 +122,21 @@ RSpec.describe "Games", type: :request do
   describe "DELETE /destroy" do
     it "deletes a game with a valid id params" do
       gametitle1 = user.games.create(
-          title: 'Vector-man',
-          image:'https://upload.wikimedia.org/wikipedia/en/4/43/Vectorman_cover.jpg?20080627132115',
-          platform:'SEGA',
-          genre:'Action',
-          notes:'Awesome childhood game spent many hours on this game!',
-          user_id: user.id
+        title: 'Vector-man',
+        image:'https://upload.wikimedia.org/wikipedia/en/4/43/Vectorman_cover.jpg?20080627132115',
+        platform:'SEGA',
+        genre:'Action',
+        notes:'Awesome childhood game spent many hours on this game!',
+        user_id: user.id
       )
 
       gametitle2 = user.games.create(
-          title: 'Vectorman',
-          image:'https://upload.wikimedia.org/wikipedia/en/4/43/Vectorman_cover.jpg?20080627132115',
-          platform:'SEGA Genesis',
-          genre:'Adventure',
-          notes:'Spent many hours on this game!',
-          user_id: user.id
+        title: 'Vectorman',
+        image:'https://upload.wikimedia.org/wikipedia/en/4/43/Vectorman_cover.jpg?20080627132115',
+        platform:'SEGA Genesis',
+        genre:'Adventure',
+        notes:'Spent many hours on this game!',
+        user_id: user.id
       )
       get '/games'
 
