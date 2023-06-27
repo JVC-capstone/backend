@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :games, only: [:index, :update, :destroy]
+  resources :games, only: [:index, :create, :update, :destroy]
   devise_for :users,
     path: '',
     path_names: {

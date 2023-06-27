@@ -11,7 +11,6 @@ class GamesController < ApplicationController
 
     def create 
         game = Game.create(game_params)
-        game.user_id = params[:game][:user_id] # Set the user_id explicitly
         if game.valid?
           render json: game
         else
