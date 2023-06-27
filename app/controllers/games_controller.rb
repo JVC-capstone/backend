@@ -12,16 +12,16 @@ class GamesController < ApplicationController
     def create 
         game = Game.create(game_params)
         if game.valid?
-            render json: game, status: :created
+          render json: game
         else
-            render json: game.errors, status: 422
+          render json: game.errors
         end
-    end
+      end
 
     def update
         game = Game.find(params[:id])
-        game.update(game_params)
-        if game.valid?
+        if game.update(game_params)
+        
           render json: game
         else
           render json: game.errors, status: 422

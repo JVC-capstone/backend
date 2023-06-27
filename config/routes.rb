@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :games
+  resources :games, only: [:index, :create, :update, :destroy]
   devise_for :users,
     path: '',
     path_names: {
@@ -11,4 +11,6 @@ Rails.application.routes.draw do
       sessions: 'users/sessions',
       registrations: 'users/registrations'
     }
+
+    
 end
