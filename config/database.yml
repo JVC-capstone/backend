@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: gamer_vault_backend_production
-  username: gamer_vault_backend
-  password: <%= ENV["GAMER_VAULT_BACKEND_DATABASE_PASSWORD"] %>
+  url: <%= ENV ['DATABASE_URL'] %>
