@@ -81,5 +81,5 @@ test:
 #
 production:
   <<: *default
-  url: <%= ENV ['DATABASE_URL'] %>
-  # renderbuild
+  url: <%= ENV['DATABASE_URL'] %>
+
